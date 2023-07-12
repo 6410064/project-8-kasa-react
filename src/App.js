@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import Home from './pages/Home';
 import About from './pages/About';
+import Location from './pages/Location';
 import NotFound from './pages/NotFound';
 import './App.scss';
+import Header from './components/layout/Header';
+import Footer from './components/layout/Footer';
 
 import {
   createBrowserRouter,
@@ -22,11 +25,19 @@ const App = () => {
       path: "/notfound",
       element: <NotFound />,
     },
+    {
+      path: "/location/:id",
+      element: <Location />
+    }
   ]);
 
 
   return (
-    <RouterProvider router={router} />
+    <Fragment>
+      <Header />
+      <RouterProvider router={router} />
+      <Footer />
+    </Fragment>
   );
 }
 

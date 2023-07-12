@@ -1,6 +1,4 @@
 import picture2 from '../images-p8/Image2.png';
-import Header from './Header';
-import Footer from './Footer';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronUp } from '@fortawesome/free-solid-svg-icons';
 import React, { useState } from 'react';
@@ -17,7 +15,7 @@ const AboutSection = () => {
       <img className="about-img" src={picture2} alt="paysage" />
       <div className='about-section'>
         <div>
-          <h2 className='section-titles'>Fiabilité 
+          <h2 className='section-titles'>Fiabilité
             <FontAwesomeIcon
               className={`chevron-icon ${isRotated ? 'rotate-animation' : ''}`}
               icon={faChevronUp}
@@ -28,7 +26,7 @@ const AboutSection = () => {
             régulièrement vérifiées par nos équipes.</p>
         </div>
         <div>
-          <h2 className='section-titles'>Respect 
+          <h2 className='section-titles'>Respect
             <FontAwesomeIcon
               className={`chevron-icon ${isRotated ? 'rotate-animation' : ''}`}
               icon={faChevronUp}
@@ -39,7 +37,7 @@ const AboutSection = () => {
             perturbation du voisinage entraînera une exclusion de notre plateforme.</p>
         </div>
         <div>
-          <h2 className='section-titles'>Service 
+          <h2 className='section-titles'>Service
             <FontAwesomeIcon
               className={`chevron-icon ${isRotated ? 'rotate-animation' : ''}`}
               icon={faChevronUp}
@@ -50,7 +48,7 @@ const AboutSection = () => {
             perturbation du voisinage entraînera une exclusion de notre plateforme.</p>
         </div>
         <div>
-          <h2 className='section-titles'>Sécurité 
+          <h2 className='section-titles'>Sécurité
             <FontAwesomeIcon
               className={`chevron-icon ${isRotated ? 'rotate-animation' : ''}`}
               icon={faChevronUp}
@@ -70,11 +68,7 @@ const AboutSection = () => {
 const About = () => {
   return (
     <div>
-      <nav>
-        <Header />
-      </nav>
       <AboutSection />
-      <Footer />
     </div>
   );
 };
