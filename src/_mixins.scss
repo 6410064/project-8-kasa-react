@@ -1,9 +1,17 @@
 @mixin headerImg {
-    height: 150px;
-    width: 100%;
-    object-fit: cover;
-    margin: 0 5%;
-    border-radius: 20px;
-    filter: brightness(0.7);
-    margin-bottom: 25px;
-  }
+  height: 150px;
+  width: 100%;
+  object-fit: cover;
+  margin: 0 5%;
+  border-radius: 20px;
+  filter: brightness(0.7);
+  margin-bottom: 25px;
+}
+
+@mixin arrowStyle {
+  position: absolute;
+  top: 50%;
+  font-size: 3em;
+  color: white;
+  transform: translateY(-50%);
+}

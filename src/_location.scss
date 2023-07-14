@@ -1,0 +1,20 @@
+@import './mixins.scss';
+.img-caroussel {
+    height: 350px;
+    object-fit: cover;
+    width: 90%;
+    margin: 0 5%;
+}
+
+.arrow-left {
+ @include arrowStyle;
+    left: 10%;
+
+}
+
+.arrow-right {
+    @include arrowStyle;
+    right: 10%;
+    
+
+}

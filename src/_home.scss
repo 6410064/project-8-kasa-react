@@ -38,13 +38,12 @@
   
   .home-section {
     background-color: rgb(233, 232, 232);
-    margin:  0 5%;
+    margin: 0 5%;
     padding: 20px;
     width: 100%;
-    height: 500px;
+    height: auto;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 30px;
     border-radius: 10px;
     box-sizing: border-box;
@@ -54,13 +53,11 @@
       color: aliceblue;
       background: linear-gradient(#FF6060,#a45151, #7c1e1e);
       border-radius: 10px;
-      justify-content: flex-start;
-      align-items: flex-end;
-      padding-left: 15px;
       width: 100%;
       height: 100%;
       overflow: hidden;
       aspect-ratio: 1/1;
+      position: relative;
   
       .home-section-child-text {
         width: 70px;
