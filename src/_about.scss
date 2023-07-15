@@ -12,14 +12,7 @@
     flex-direction: column;
 
     .section-titles {
-        font-size: 20px;
-        font-weight: 400;
-        padding: 4px 10px 6px 10px;
-        color: $white-color;
-        background-color: $orange-color;
-        display: flex;
-        justify-content: space-between;
-        border-radius: 5px;
+        @include scrollingMenu;
         margin:0 ;
         .chevron-icon {
             margin-top: 8px;
@@ -27,11 +20,8 @@
     }
 }
 .section-hidden-text {
-    // visibility: hidden;
-    background-color: $grey-color;
+    @include hiddenText;
     margin: 0 0 20px 0;
-    padding: 10px;
-    border-radius: 0 0 5px 5px  ;
 }
 
 .rotate-animation {

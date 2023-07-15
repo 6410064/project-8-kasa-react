@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
+import ChevronRotation from '../components/home/ChevronRotation';
 
 library.add(faStar);
 
@@ -28,6 +29,17 @@ const Location = () => {
     setCurrentImageIndex((prevIndex) =>
       prevIndex === 0 ? pictures.length - 1 : prevIndex - 1
     );
+  };
+
+  const [isRotated1, setIsRotated1] = useState(false);
+  const [isRotated2, setIsRotated2] = useState(false);
+
+  const handleChevronClick1 = () => {
+    setIsRotated1(!isRotated1);
+  };
+
+  const handleChevronClick2 = () => {
+    setIsRotated2(!isRotated2);
   };
 
   // Fonction pour générer les étoiles en fonction du rating
@@ -74,7 +86,7 @@ const Location = () => {
       </div>
       <div className="title-and-picture-host">
         <div className="title-and-location">
-          <h1>{location.title}</h1>
+          <h1 className='title'>{location.title}</h1>
           <p>{location.location}</p>
           <div className="keyword-decription">
             <div>cosy</div>
@@ -83,11 +95,31 @@ const Location = () => {
           </div>
         </div>
         <div>
-          <p>{location.host.name}</p>
-          <img className="host-picture" src={location.host.picture} alt="Host Profile" />
+          <div className='host-name-and-picture'>
+            <p className='host-name'>{location.host.name}</p>
+            <img className="host-picture" src={location.host.picture} alt="Host Profile" />
+          </div>
           <div className="rating-container">
             {generateRatingStars(parseInt(location.rating))}
           </div>
+        </div>
+      </div>
+      <div className='description-and-items'>
+        <div>
+          <h2 className='location-description'>Description
+          <ChevronRotation isRotated={isRotated1} handleClick={handleChevronClick1} />
+          </h2>          
+          <p className='location-description-text'>{location.description}</p>
+        </div>
+        <div>
+          <h2 className='location-description'>Equipements
+          <ChevronRotation isRotated={isRotated2} handleClick={handleChevronClick2} />
+          </h2>         
+          <p className='location-description-text'>
+  {location.equipments.map((equipment, index) => (
+    <li key={index}>{equipment}</li>
+  ))}
+</p>
         </div>
       </div>
     </div>
@@ -95,4 +127,3 @@ const Location = () => {
 };
 
 export default Location;
-

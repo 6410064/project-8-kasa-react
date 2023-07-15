@@ -18,6 +18,10 @@
     right: 10%;
 }
 
+.title {
+    margin-top: 10px;
+}
+
 .title-and-picture-host {
     display: flex;
     justify-content: space-between;
@@ -37,7 +41,9 @@
 
         /*cible l'enfant*/
         >* {
-            padding: 0px 30px 3px 30px;
+            margin: 10px 0;
+            font-size: 14px;
+            padding: 0px 30px 1px 30px;
             background-color: $orange-color ;
             border-radius: 10px;
         }
@@ -46,7 +52,19 @@
 .rating {
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
+    margin-top: 10px;
+    
   
+}
+.host-name {
+    width: 50px;
+}
+.host-name-and-picture{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    gap : 5px;
 }
 .host-picture {
     border-radius: 50%;
@@ -61,4 +79,20 @@
   .star-empty {
     color: gray;
   }
+.description-and-items {
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+margin: 0 5%
+
+}
+  .location-description {
+    @include scrollingMenu;
+    width: 40vw;
+}
+.location-description-text {
+ @include hiddenText;
+ width: 40vw;
+ list-style-type: none;
+}
   

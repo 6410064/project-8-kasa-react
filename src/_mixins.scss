@@ -15,3 +15,22 @@
   color: white;
   transform: translateY(-50%);
 }
+
+@mixin scrollingMenu {
+  font-size: 20px;
+        font-weight: 400;
+        padding: 4px 10px 6px 10px;
+        color: $white-color;
+        background-color: $orange-color;
+        display: flex;
+        justify-content: space-between;
+        border-radius: 5px;
+}
+
+@mixin hiddenText {
+  // visibility: hidden;
+  background-color: $grey-color;
+  padding: 10px;
+  border-radius: 0 0 5px 5px;
+  
+}
