@@ -1,8 +1,8 @@
 @import './_home.scss';
 @import './_about.scss';
-@import './variables.scss';
-@import './location.scss';
-// @import './_mixins.scss';
+@import './_variables.scss';
+@import './_location.scss';
+@import './notFound.scss';
 
 .App {
   text-align: center;
@@ -45,8 +45,9 @@
 }
 
 body {
+
   box-sizing: border-box;
-  color: #FF6060;
+  color: $orange-color;
 }
 
 h1,p,h2 {

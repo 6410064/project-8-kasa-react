@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import ChevronRotation from '../components/home/ChevronRotation';
+import Collapse from '../components/home/Collapse';
 
 const AboutSection = () => {
   const [isRotated, setIsRotated] = useState(false);
@@ -11,28 +11,44 @@ const AboutSection = () => {
   return (
     <div className='about-section'>
       <div>
-        <h2 className='section-titles'>Fiabilité
-          <ChevronRotation isRotated={isRotated} handleClick={handleChevronClick} />
+        <h2 className='section-titles'>
+          Fiabilité
         </h2>
-        <p className='section-hidden-text'>Les annonces postées sur Kasa garantissent une fiabilité totale. Les photos sont conformes aux logements, et toutes les informations sont régulièrement vérifiées par nos équipes.</p>
+        <Collapse
+          content="Les annonces postées sur Kasa garantissent une fiabilité totale. Les photos sont conformes aux logements, et toutes les informations sont régulièrement vérifiées par nos équipes."
+          isCollapsed={!isRotated}
+          handleClick={handleChevronClick}
+        />
       </div>
       <div>
-        <h2 className='section-titles'>Respect
-          <ChevronRotation isRotated={isRotated} handleClick={handleChevronClick} />
+        <h2 className='section-titles'>
+          Respect
         </h2>
-        <p className='section-hidden-text'>La bienveillance fait partie des valeurs fondatrices de Kasa. Tout comportement discriminatoire ou de perturbation du voisinage entraînera une exclusion de notre plateforme.</p>
+        <Collapse
+          content="La bienveillance fait partie des valeurs fondatrices de Kasa. Tout comportement discriminatoire ou de perturbation du voisinage entraînera une exclusion de notre plateforme."
+          isCollapsed={!isRotated}
+          handleClick={handleChevronClick}
+        />
       </div>
       <div>
-        <h2 className='section-titles'>Service
-          <ChevronRotation isRotated={isRotated} handleClick={handleChevronClick} />
+        <h2 className='section-titles'>
+          Service
         </h2>
-        <p className='section-hidden-text'>La bienveillance fait partie des valeurs fondatrices de Kasa. Tout comportement discriminatoire ou de perturbation du voisinage entraînera une exclusion de notre plateforme.</p>
+        <Collapse
+          content="La bienveillance fait partie des valeurs fondatrices de Kasa. Tout comportement discriminatoire ou de perturbation du voisinage entraînera une exclusion de notre plateforme."
+          isCollapsed={!isRotated}
+          handleClick={handleChevronClick}
+        />
       </div>
       <div>
-        <h2 className='section-titles'>Sécurité
-          <ChevronRotation isRotated={isRotated} handleClick={handleChevronClick} />
+        <h2 className='section-titles'>
+          Sécurité
         </h2>
-        <p className='section-hidden-text'>La sécurité est la priorité de Kasa. Aussi bien pour nos hôtes que pour les voyageurs, chaque logement correspond aux critères de sécurité établis par nos services. En laissant une note aussi bien à l'hôte qu'au locataire, cela permet à nos équipes de vérifier que les standards sont bien respectés. Nous organisons également des ateliers sur la sécurité domestique pour nos hôtes.</p>
+        <Collapse
+          content="La sécurité est la priorité de Kasa. Aussi bien pour nos hôtes que pour les voyageurs, chaque logement correspond aux critères de sécurité établis par nos services. En laissant une note aussi bien à l'hôte qu'au locataire, cela permet à nos équipes de vérifier que les standards sont bien respectés. Nous organisons également des ateliers sur la sécurité domestique pour nos hôtes."
+          isCollapsed={!isRotated}
+          handleClick={handleChevronClick}
+        />
       </div>
     </div>
   );

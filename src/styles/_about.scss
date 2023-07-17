@@ -1,6 +1,6 @@
 @import './_mixins.scss';
-@import './variables.scss' ;
-@import './animations.scss';
+@import './_variables.scss';
+@import './_animations.scss';
 
 .about-img {
     @include headerImg;
@@ -13,19 +13,20 @@
 
     .section-titles {
         @include scrollingMenu;
-        margin:0 ;
+        margin: 0;
+
         .chevron-icon {
             margin-top: 8px;
+            transition: transform 0.5s;
+
+            &.dropdown-animation {
+                animation: dropdownAnimation 0.5s forwards;
+            }
         }
     }
 }
+
 .section-hidden-text {
     @include hiddenText;
     margin: 0 0 20px 0;
 }
-
-.rotate-animation {
-    animation: rotation-180 0.5s ease-out both;
-  }
-  
-  

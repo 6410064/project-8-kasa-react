@@ -1,0 +1,19 @@
+.container-error-title{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+.error-title {
+    font-size: 225px;
+}}
+
+.container-error-info {
+    display: flex ;
+flex-direction: column;
+align-items: center;
+gap: 80px;
+margin-bottom: 80px;
+.link-back-home{
+    font-size: 10px;
+    color: $orange-color;
+}
+}

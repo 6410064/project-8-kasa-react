@@ -3,7 +3,7 @@ import Home from './pages/Home';
 import About from './pages/About';
 import Location from './pages/Location';
 import NotFound from './pages/NotFound';
-import './App.scss';
+import './styles/App.scss';
 import Header from './components/layout/Header';
 import Footer from './components/layout/Footer';
 

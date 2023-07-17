@@ -1,4 +1,5 @@
-@import './mixins.scss';
+@import './_mixins.scss';
+@import './_animations.scss';
 
 .img-caroussel {
     height: 350px;
@@ -89,6 +90,9 @@ margin: 0 5%
   .location-description {
     @include scrollingMenu;
     width: 40vw;
+}
+.location-chevron {
+    
 }
 .location-description-text {
  @include hiddenText;

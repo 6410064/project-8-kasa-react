@@ -106,20 +106,24 @@ const Location = () => {
       </div>
       <div className='description-and-items'>
         <div>
-          <h2 className='location-description'>Description
-          <ChevronRotation isRotated={isRotated1} handleClick={handleChevronClick1} />
-          </h2>          
-          <p className='location-description-text'>{location.description}</p>
+          <h2 className={`location-description ${isRotated1 ? 'dropdown-animation' : ''}`}>
+            Description
+            <ChevronRotation isRotated={isRotated1} handleClick={handleChevronClick1} />
+          </h2>
+          <p className={`location-description-text ${isRotated1 ? 'dropdown-animation' : ''}`}>
+            {location.description}
+          </p>
         </div>
         <div>
-          <h2 className='location-description'>Equipements
-          <ChevronRotation isRotated={isRotated2} handleClick={handleChevronClick2} />
-          </h2>         
-          <p className='location-description-text'>
-  {location.equipments.map((equipment, index) => (
-    <li key={index}>{equipment}</li>
-  ))}
-</p>
+          <h2 className={`location-description ${isRotated2 ? 'dropdown-animation' : ''}`}>
+            Equipements
+            <ChevronRotation className="location-chevron" isRotated={isRotated2} handleClick={handleChevronClick2} />
+          </h2>
+          <p className={`location-description-text ${isRotated2 ? 'dropdown-animation' : ''}`}>
+            {location.equipments.map((equipment, index) => (
+              <li key={index}>{equipment}</li>
+            ))}
+          </p>
         </div>
       </div>
     </div>
