@@ -6,6 +6,10 @@
   border-radius: 20px;
   filter: brightness(0.7);
   margin-bottom: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
 }
 
 @mixin arrowStyle {
@@ -32,8 +36,6 @@
   background-color: $grey-color;
   padding: 0;
   border-radius: 0 0 5px 5px;
-  overflow: hidden;
-  height: 0;
-  
+    
 }
 

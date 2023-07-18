@@ -2,27 +2,27 @@
 @import './_variables.scss';
 @import './_animations.scss';
 
-.about-img {
+.container-about-title-img {
     @include headerImg;
+    background-image: url(../images-p8/Image2.png);
+    @media (max-width: 767px) {
+        height: 200px;
+        border-radius: 10px;
+      }
 }
 
 .about-section {
     padding: 0 15%;
     display: flex;
     flex-direction: column;
+    @media (max-width: 767px) {
+        padding: 0 5%;
+      }
 
     .section-titles {
         @include scrollingMenu;
         margin: 0;
-
-        .chevron-icon {
-            margin-top: 8px;
-            transition: transform 0.5s;
-
-            &.dropdown-animation {
-                animation: dropdownAnimation 0.5s forwards;
-            }
-        }
+        
     }
 }
 

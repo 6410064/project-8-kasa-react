@@ -6,9 +6,9 @@ let locations = require('../data.json');
 
 const Home = () => {
     return (
-        <>
+        <>  <div  className='container-title-img'>
             <h1 id='home-title'>Chez vous, partout et ailleurs</h1>
-            <img id='img1' src={picture} alt="paysage" />
+            </div>
             <section className="home-section">
                 {locations.map((location, index) => (
                     <LocationCard key={index} location={location} />

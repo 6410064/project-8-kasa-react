@@ -1,5 +1,6 @@
 @import './_mixins.scss';
 @import './variables.scss';
+
 #home-nav {
   display: flex;
   justify-content: space-between;
@@ -8,37 +9,49 @@
 
 
   .logo {
-    height: 50px;
+    height: 40px;
     margin-top: 10px;
+
+    @media (max-width: 767px) {
+      height: 20px;
+    }
   }
 
   .home-nav-link {
     display: flex;
     gap: 20px;
-
+    margin-top: 10px;
     align-items: center;
 
     a {
       text-decoration: none;
-      color:$orange-color;
+      color: $orange-color;
     }
   }
 }
 
-#home-title {
-  position: absolute;
-  margin-top: 45px;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: white;
-  text-align: center;
-  white-space: nowrap;
-  z-index: 2;
+.container-title-img {
+  @include headerImg;
+  background-image: url(../images-p8/Image1.png);
+  
+  @media (max-width: 767px) {
+    height: 90px;  
+    border-radius: 10px;
+
+  }
 }
 
-#img1 {
-  @include headerImg;
+#home-title {
+  color: red;
+  z-index: 2;
+  filter: brightness(1);
 
+  @media (max-width: 767px) {
+    align-items: normal;
+  justify-content: normal;
+  padding: 5%;
+  font-size: 20px;
+  }
 }
 
 .home-section {
@@ -82,8 +95,8 @@
   margin: 0 auto;
   background-color: black;
   color: white;
- position: relative;
- bottom: 0;
+  position: relative;
+  bottom: 0;
 
 
 

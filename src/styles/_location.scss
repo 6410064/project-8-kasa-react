@@ -91,12 +91,11 @@ margin: 0 5%
     @include scrollingMenu;
     width: 40vw;
 }
-.location-chevron {
+
+.collapse-content {
     
-}
-.location-description-text {
  @include hiddenText;
- width: 40vw;
- list-style-type: none;
+  width: 100%;
+  list-style-type: none;
 }
   

@@ -9,6 +9,8 @@ const AboutSection = () => {
   };
 
   return (
+    <div>
+      <div  className='container-about-title-img'></div>
     <div className='about-section'>
       <div>
         <h2 className='section-titles'>
@@ -50,6 +52,7 @@ const AboutSection = () => {
           handleClick={handleChevronClick}
         />
       </div>
+    </div>
     </div>
   );
 };

@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
-import ChevronRotation from '../components/home/ChevronRotation';
+import Collapse from '../components/home/Collapse';
 
 library.add(faStar);
 
@@ -106,24 +106,23 @@ const Location = () => {
       </div>
       <div className='description-and-items'>
         <div>
-          <h2 className={`location-description ${isRotated1 ? 'dropdown-animation' : ''}`}>
+          <h2 className='location-description'>
             Description
-            <ChevronRotation isRotated={isRotated1} handleClick={handleChevronClick1} />
           </h2>
-          <p className={`location-description-text ${isRotated1 ? 'dropdown-animation' : ''}`}>
-            {location.description}
-          </p>
+          <Collapse
+            content={location.description}
+            
+          />
         </div>
         <div>
-          <h2 className={`location-description ${isRotated2 ? 'dropdown-animation' : ''}`}>
+          <h2 className='location-description'>
             Equipements
-            <ChevronRotation className="location-chevron" isRotated={isRotated2} handleClick={handleChevronClick2} />
           </h2>
-          <p className={`location-description-text ${isRotated2 ? 'dropdown-animation' : ''}`}>
-            {location.equipments.map((equipment, index) => (
+          <Collapse
+            content={location.equipments.map((equipment, index) => (
               <li key={index}>{equipment}</li>
             ))}
-          </p>
+          />
         </div>
       </div>
     </div>
