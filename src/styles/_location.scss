@@ -6,17 +6,26 @@
     object-fit: cover;
     width: 90%;
     margin: 0 5%;
+    @media (max-width: 767px) {
+        border-radius: 10px;
+        height: 250px;
+      }
 }
 
 .arrow-left {
     @include arrowStyle;
     left: 10%;
-
+    @media (max-width: 767px) {
+        top: 34%;
+    }
 }
 
 .arrow-right {
     @include arrowStyle;
     right: 10%;
+    @media (max-width: 767px) {
+        top: 34%;
+    }
 }
 
 .title {
