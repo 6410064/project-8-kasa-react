@@ -26,9 +26,13 @@
     a {
       text-decoration: none;
       color: $orange-color;
+      &:active {
+        text-decoration: underline;
+      }
     }
   }
 }
+
 
 .container-title-img {
   @include headerImg;
@@ -106,7 +110,8 @@
     margin-bottom: 20px;
 
     .logo {
-      color: white;
+      filter: brightness(0) invert(1);
+    
       height: 20px;
     }
   }

@@ -1,21 +1,34 @@
-import React, { useState } from 'react';
-import { useParams } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
-import { library } from '@fortawesome/fontawesome-svg-core';
-import { faStar } from '@fortawesome/free-solid-svg-icons';
-import Collapse from '../components/home/Collapse';
+import React, { useState } from "react";
+import { useParams } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faChevronLeft,
+  faChevronRight,
+} from "@fortawesome/free-solid-svg-icons";
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { faStar } from "@fortawesome/free-solid-svg-icons";
+import Collapse from "../components/home/Collapse";
 
 library.add(faStar);
 
-let locations = require('../data.json');
+let locations = require("../data.json");
 
 const Location = () => {
   const { id } = useParams();
 
-  const location = locations.find((loc) => loc.id === id);
+  const locationData = locations.find((loc) => loc.id === id);
 
-  const { pictures } = location;
+  const {
+    title,
+    pictures,
+    host,
+    tags,
+    description,
+    equipments,
+    location,
+    cover,
+    rating,
+  } = locationData;
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
@@ -31,17 +44,6 @@ const Location = () => {
     );
   };
 
-  const [isRotated1, setIsRotated1] = useState(false);
-  const [isRotated2, setIsRotated2] = useState(false);
-
-  const handleChevronClick1 = () => {
-    setIsRotated1(!isRotated1);
-  };
-
-  const handleChevronClick2 = () => {
-    setIsRotated2(!isRotated2);
-  };
-
   // Fonction pour générer les étoiles en fonction du rating
   const generateRatingStars = (rating) => {
     const filledStars = [];
@@ -49,18 +51,18 @@ const Location = () => {
 
     for (let i = 0; i < rating; i++) {
       filledStars.push(
-        <FontAwesomeIcon key={i} icon={faStar} className="star-filled" />
+        <FontAwesomeIcon key={i} icon={faStar} className='star-filled' />
       );
     }
 
     for (let i = rating; i < 5; i++) {
       emptyStars.push(
-        <FontAwesomeIcon key={i} icon={faStar} className="star-empty" />
+        <FontAwesomeIcon key={i} icon={faStar} className='star-empty' />
       );
     }
 
     return (
-      <div className="rating">
+      <div className='rating'>
         {filledStars}
         {emptyStars}
       </div>
@@ -69,57 +71,58 @@ const Location = () => {
 
   return (
     <div>
-      <div className="carousel">
-        <img className="img-caroussel" src={pictures[currentImageIndex]} alt="Carousel Image" />
+      <div className='carousel'>
+        <img
+          className='img-caroussel'
+          src={pictures[currentImageIndex]}
+          alt='Carousel Image'
+        />
       </div>
-      <div className="carousel-navigation">
+      <div className='carousel-navigation'>
         <FontAwesomeIcon
-          className="arrow-left"
+          className='arrow-left'
           icon={faChevronLeft}
           onClick={previousImage}
         />
         <FontAwesomeIcon
-          className="arrow-right"
+          className='arrow-right'
           icon={faChevronRight}
           onClick={nextImage}
         />
       </div>
-      <div className="title-and-picture-host">
-        <div className="title-and-location">
-          <h1 className='title'>{location.title}</h1>
-          <p>{location.location}</p>
-          <div className="keyword-decription">
-            <div>cosy</div>
-            <div>canal</div>
-            <div>paris 10</div>
+      <div className='title-and-picture-host'>
+        <div className='title-and-location'>
+          <h1 className='title'>{title}</h1>
+          <p>{location}</p>
+          <div className='keyword-decription'>
+          {tags.map((tag, index) => (
+              <li key={index}>{tag}</li>
+              ))}
           </div>
         </div>
-        <div>
+        <div className='host-name-picture-and-stars'>
           <div className='host-name-and-picture'>
-            <p className='host-name'>{location.host.name}</p>
-            <img className="host-picture" src={location.host.picture} alt="Host Profile" />
+            <p className='host-name'>{host.name}</p>
+            <img
+              className='host-picture'
+              src={host.picture}
+              alt='Host Profile'
+            />
           </div>
-          <div className="rating-container">
-            {generateRatingStars(parseInt(location.rating))}
+          <div className='rating-container'>
+            {generateRatingStars(parseInt(rating))}
           </div>
         </div>
       </div>
       <div className='description-and-items'>
         <div>
-          <h2 className='location-description'>
-            Description
-          </h2>
-          <Collapse
-            content={location.description}
-            
-          />
+          <h2 className='location-description'>Description</h2>
+          <Collapse content={description} />
         </div>
         <div>
-          <h2 className='location-description'>
-            Equipements
-          </h2>
+          <h2 className='location-description'>Equipements</h2>
           <Collapse
-            content={location.equipments.map((equipment, index) => (
+            content={equipments.map((equipment, index) => (
               <li key={index}>{equipment}</li>
             ))}
           />
