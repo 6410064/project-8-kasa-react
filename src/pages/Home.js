@@ -9,8 +9,8 @@ const Home = () => {
             <h1 id='home-title'>Chez vous, partout et ailleurs</h1>
         </div>
             <section className="home-section">
-                {locations.map((location, index) => (
-                    <LocationCard key={index} location={location} />
+                {locations.map((title, index) => (
+                    <LocationCard key={index} location={title} />
                 ))}
             </section>
         </>

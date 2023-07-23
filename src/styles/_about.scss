@@ -5,28 +5,42 @@
 .container-about-title-img {
     @include headerImg;
     background-image: url(../images-p8/Image2.png);
+
     @media (max-width: 767px) {
         height: 200px;
         border-radius: 10px;
-      }
+    }
 }
 
 .about-section {
     padding: 0 15%;
     display: flex;
     flex-direction: column;
+
     @media (max-width: 767px) {
         padding: 0 5%;
-      }
+    }
 
     .section-titles {
         @include scrollingMenu;
-        margin: 0;
-        
+        ;
     }
 }
 
-.section-hidden-text {
+.fa-chevron-down {
+    overflow: visible;
+    box-sizing: content-box;
+    position: absolute;
+    color: white;
+    margin-top: -43px;
+    left: 81%;
+
+    @media (max-width: 767px) {
+        left: 85%;
+    }
+}
+
+.collapse-content {
     @include hiddenText;
-    margin: 0 0 20px 0;
+    margin: -20px 0 20px 0;
 }

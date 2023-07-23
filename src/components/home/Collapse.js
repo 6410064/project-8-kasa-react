@@ -20,5 +20,3 @@ const Collapse = ({ content }) => {
 
 export default Collapse;
 
-
-  
