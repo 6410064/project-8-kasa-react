@@ -1,10 +1,7 @@
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faChevronLeft,
-  faChevronRight,
-} from "@fortawesome/free-solid-svg-icons";
+import { faChevronLeft, faChevronRight } from "@fortawesome/free-solid-svg-icons";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 import Collapse from "../components/home/Collapse";
@@ -25,8 +22,7 @@ const Location = () => {
     tags,
     description,
     equipments,
-    location,
-    cover,
+    location,    
     rating,
   } = locationData;
 
@@ -84,6 +80,7 @@ const Location = () => {
           icon={faChevronLeft}
           onClick={previousImage}
         />
+        <span className="caroussel-counter">{currentImageIndex + 1}/{pictures.length}</span>
         <FontAwesomeIcon
           className='arrow-right'
           icon={faChevronRight}

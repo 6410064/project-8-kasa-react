@@ -30,7 +30,15 @@
         top: 34%;
     }
 }
-
+.caroussel-counter {
+    position: absolute;
+    top: 75%;
+    left: 45%;
+    color: white;
+    @media (max-width: 767px) {
+        top: 55%;
+    }
+}
 .title {
     margin-top: 10px;
 }
@@ -60,7 +68,7 @@
     flex-direction: column;
 
     .keyword-decription {
-        // max-width: 100%;
+        list-style-type: none;
         display: flex;
         flex-direction: row;
         color: $white-color;
