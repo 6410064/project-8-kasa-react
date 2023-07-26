@@ -1,5 +1,5 @@
 @import './_mixins.scss';
-@import './_animations.scss';
+
 
 .img-caroussel {
     height: 350px;
@@ -18,7 +18,7 @@
     left: 10%;
 
     @media (max-width: 767px) {
-        top: 34%;
+        top: 31%;
     }
 }
 
@@ -27,7 +27,7 @@
     right: 10%;
 
     @media (max-width: 767px) {
-        top: 34%;
+        top: 31%;
     }
 }
 .caroussel-counter {
@@ -166,4 +166,7 @@
     @include hiddenText;
     width: 100%;
     list-style-type: none;
+}
+.location-chevron {
+    color:blue ;
 }

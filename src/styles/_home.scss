@@ -1,37 +1,7 @@
 @import './_mixins.scss';
 @import './variables.scss';
 
-#home-nav {
-  display: flex;
-  justify-content: space-between;
-  margin: 2% 5% 35px 5%;
-  width: 90%;
 
-
-  .logo {
-    height: 40px;
-    margin-top: 10px;
-
-    @media (max-width: 767px) {
-      height: 30px;
-    }
-  }
-
-  .home-nav-link {
-    display: flex;
-    gap: 20px;
-    margin-top: 10px;
-    align-items: center;
-
-    a {
-      text-decoration: none;
-      color: $orange-color;           
-    }
-    &.active { 
-      text-decoration: underline; 
-    }
-  }
-}
 
 .container-title-img {
   @include headerImg;
@@ -40,13 +10,21 @@
   @media (max-width: 767px) {
     height: 90px;
     border-radius: 10px;
+  }
 
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.3); /* Couleur semi-transparente */
+    border-radius: 20px;
   }
 }
-
 #home-title {
-  color: red;
-
+  color: white;
   z-index: 2;
 
   @media (max-width: 767px) {
@@ -80,12 +58,12 @@
     aspect-ratio: 1/1;
     position: relative;
     align-items: flex-end;
-
     box-sizing: border-box;
 
     .home-section-child-text {
       font-size: 14px;
-      margin-top: -10%;
+      margin-top: -40px;
+      margin-left: 2%;
       position: absolute;
 
     }
@@ -98,35 +76,3 @@
   object-fit: cover;
 }
 
-.footer {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding-top: 30px;
-  padding-bottom: 20px;
-  width: 100%;
-  margin: 0 auto;
-  background-color: black;
-  color: white;
-  position: relative;
-  bottom: 0;
-
-
-
-  .footer-container-logo {
-    width: 62px;
-    margin: 0 auto;
-    margin-bottom: 20px;
-
-    .logo {
-      filter: brightness(0) invert(1);
-
-      height: 20px;
-    }
-  }
-
-  .footer-subtitle {
-    width: 230px;
-    margin: 0 auto;
-  }
-}

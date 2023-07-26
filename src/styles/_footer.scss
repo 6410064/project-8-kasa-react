@@ -1,0 +1,31 @@
+.footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 30px;
+    padding-bottom: 20px;
+    width: 100%;
+    margin: 0 auto;
+    background-color: black;
+    color: white;
+    position: relative;
+    bottom: 0;
+
+
+
+    .footer-container-logo {
+        width: 62px;
+        margin: 0 auto;
+        margin-bottom: 20px;
+
+        .logo {
+            filter: brightness(0) invert(1);
+            height: 20px;
+        }
+    }
+
+    .footer-subtitle {
+        width: 230px;
+        margin: 0 auto;
+    }
+}

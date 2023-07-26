@@ -1,8 +1,8 @@
-// import React, { useState } from 'react';
+import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
 
-const ChevronRotation = ({ isRotated, handleClick }) => {
+const ChevronRotation = ({ isRotated, handleClick, chevronClass }) => {
   const rotationDegree = isRotated ? 0 : 180;
   const rotationStyle = {
     transform: `rotate(${rotationDegree}deg)`,
@@ -11,12 +11,12 @@ const ChevronRotation = ({ isRotated, handleClick }) => {
 
   return (
     <FontAwesomeIcon
-      className="chevron-icon"
-      icon={faChevronDown}
+      className={`fa-chevron-down ${chevronClass}`} // Utilisez la classe supplémentaire ici
+      icon={faChevronDown} // Rétablissez cette ligne pour afficher l'icône
       style={rotationStyle}
       onClick={handleClick}
     />
   );
-}
+};
 
 export default ChevronRotation;

@@ -22,7 +22,7 @@ const Location = () => {
     tags,
     description,
     equipments,
-    location,    
+    location,
     rating,
   } = locationData;
 
@@ -92,9 +92,9 @@ const Location = () => {
           <h1 className='title'>{title}</h1>
           <p>{location}</p>
           <div className='keyword-decription'>
-          {tags.map((tag, index) => (
+            {tags.map((tag, index) => (
               <li key={index}>{tag}</li>
-              ))}
+            ))}
           </div>
         </div>
         <div className='host-name-picture-and-stars'>
@@ -114,11 +114,14 @@ const Location = () => {
       <div className='description-and-items'>
         <div>
           <h2 className='location-description'>Description</h2>
-          <Collapse content={description} />
+          <Collapse
+            chevronClass='location-chevron'
+            content={description} />
         </div>
         <div>
           <h2 className='location-description'>Equipements</h2>
           <Collapse
+            chevronClass='location-chevron'
             content={equipments.map((equipment, index) => (
               <li key={index}>{equipment}</li>
             ))}
