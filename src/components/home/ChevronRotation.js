@@ -11,8 +11,8 @@ const ChevronRotation = ({ isRotated, handleClick, chevronClass }) => {
 
   return (
     <FontAwesomeIcon
-      className={`fa-chevron-down ${chevronClass}`} // Utilisez la classe supplémentaire ici
-      icon={faChevronDown} // Rétablissez cette ligne pour afficher l'icône
+      className={`fa-chevron-down ${chevronClass}`} 
+      icon={faChevronDown} 
       style={rotationStyle}
       onClick={handleClick}
     />

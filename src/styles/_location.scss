@@ -30,15 +30,18 @@
         top: 31%;
     }
 }
+
 .caroussel-counter {
     position: absolute;
     top: 75%;
     left: 45%;
     color: white;
+
     @media (max-width: 767px) {
         top: 55%;
     }
 }
+
 .title {
     margin-top: 10px;
 }
@@ -73,8 +76,9 @@
         flex-direction: row;
         color: $white-color;
         gap: 20px;
+
         @media (max-width: 767px) {
-           gap: 5px;
+            gap: 5px;
         }
 
         /*cible l'enfant*/
@@ -84,10 +88,11 @@
             padding: 0px 30px 1px 30px;
             background-color: $orange-color ;
             border-radius: 10px;
+
             @media (max-width: 767px) {
-                padding: 0px 4% 2px 4%;  
-                border-radius: 5px 
-             }
+                padding: 0px 4% 2px 4%;
+                border-radius: 5px
+            }
         }
     }
 }
@@ -97,9 +102,10 @@
     flex-direction: row;
     justify-content: space-between;
     margin-top: 10px;
+
     @media (max-width: 767px) {
-         gap: 5px;
-         margin-top: 25px;
+        gap: 5px;
+        margin-top: 25px;
     }
 
 
@@ -109,8 +115,9 @@
     width: 50px;
     margin-right: 10px;
     padding-top: 10px;
+
     @media (max-width: 767px) {
-        padding-top:0;  
+        padding-top: 0;
     }
 }
 
@@ -119,8 +126,9 @@
     display: flex;
     flex-direction: row;
     gap: 5px;
+
     @media (max-width: 767px) {
-        margin-bottom: 10px;  
+        margin-bottom: 10px;
     }
 
     .host-picture {
@@ -149,24 +157,22 @@
     flex-direction: row;
     justify-content: space-between;
     margin: 0 5%;
+
     @media (max-width: 767px) {
-        flex-direction: column;        
+        flex-direction: column;
     }
 }
 
 .location-description {
-    @include scrollingMenu;
-    width: 40vw;
+    // @include scrollingMenu;
+
     @media (max-width: 767px) {
-        width: 96%;}
+        width: 96%;
+    }
 }
 
 .collapse-content {
-
     @include hiddenText;
     width: 100%;
     list-style-type: none;
-}
-.location-chevron {
-    color:blue ;
 }

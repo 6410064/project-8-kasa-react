@@ -19,10 +19,12 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0, 0, 0, 0.3); /* Couleur semi-transparente */
+    background-color: rgba(0, 0, 0, 0.3);
+    /* Couleur semi-transparente */
     border-radius: 20px;
   }
 }
+
 #home-title {
   color: white;
   z-index: 2;
@@ -75,4 +77,3 @@
   width: 100vw;
   object-fit: cover;
 }
-

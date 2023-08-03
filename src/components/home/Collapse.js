@@ -1,17 +1,17 @@
-import React, { useState, useRef, useEffect } from 'react';
-import ChevronRotation from './ChevronRotation';
+import React, { useState, useRef, useEffect } from "react";
+import ChevronRotation from "./ChevronRotation";
 
-const Collapse = ({ content }) => {
+const Collapse = ({ content, chevronClass, title }) => {
   const [isCollapsed, setIsCollapsed] = useState(true);
   const [contentHeight, setContentHeight] = useState(0);
   const contentRef = useRef(null);
 
   useEffect(() => {
     if (!isCollapsed) {
-      // On ouverture, calcule la hauteur réelle du contenu pour la transition
+      // ouverture, calcule la hauteur réelle du contenu pour la transition
       setContentHeight(contentRef.current.scrollHeight);
     } else {
-      // On fermeture, réinitialise la hauteur à 0 pour la transition
+      // fermeture, réinitialise la hauteur à 0 pour la transition
       setContentHeight(0);
     }
   }, [isCollapsed]);
@@ -22,16 +22,23 @@ const Collapse = ({ content }) => {
 
   return (
     <div className='collapse'>
-      <h2 className='collapse-title' onClick={toggleCollapse}>
-        <ChevronRotation isRotated={!isCollapsed} handleClick={toggleCollapse} />
-      </h2>
+      <div className='collapse-title' onClick={toggleCollapse}>
+        <div className="location-description">{title}</div>
+        <div>
+          <ChevronRotation
+            isRotated={!isCollapsed}
+            handleClick={toggleCollapse}
+            chevronClass={chevronClass}
+          />
+        </div>
+      </div>
       <p
         ref={contentRef}
         className='collapse-content'
         style={{
           height: isCollapsed ? 0 : contentHeight,
-          overflow: 'hidden',
-          transition: 'height 0.3s ease-out',
+          overflow: "hidden",
+          transition: "height 0.3s ease-out",
         }}
       >
         {content}

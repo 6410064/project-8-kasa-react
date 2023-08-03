@@ -22,8 +22,9 @@
     }
 
     .section-titles {
-        @include scrollingMenu;
-        ;
+        // @media (min-width: 767px) {
+        //     width: 96%;
+        // }
     }
 }
 

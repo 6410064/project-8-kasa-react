@@ -1,7 +1,10 @@
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faChevronLeft, faChevronRight } from "@fortawesome/free-solid-svg-icons";
+import {
+  faChevronLeft,
+  faChevronRight,
+} from "@fortawesome/free-solid-svg-icons";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 import Collapse from "../components/home/Collapse";
@@ -80,7 +83,9 @@ const Location = () => {
           icon={faChevronLeft}
           onClick={previousImage}
         />
-        <span className="caroussel-counter">{currentImageIndex + 1}/{pictures.length}</span>
+        <span className='caroussel-counter'>
+          {currentImageIndex + 1}/{pictures.length}
+        </span>
         <FontAwesomeIcon
           className='arrow-right'
           icon={faChevronRight}
@@ -112,21 +117,18 @@ const Location = () => {
         </div>
       </div>
       <div className='description-and-items'>
-        <div>
-          <h2 className='location-description'>Description</h2>
-          <Collapse
-            chevronClass='location-chevron'
-            content={description} />
-        </div>
-        <div>
-          <h2 className='location-description'>Equipements</h2>
-          <Collapse
-            chevronClass='location-chevron'
-            content={equipments.map((equipment, index) => (
-              <li key={index}>{equipment}</li>
-            ))}
-          />
-        </div>
+        <Collapse
+          title='Description'
+          chevronClass='location-chevron'
+          content={description}
+        />
+        <Collapse
+          title='Equipements'
+          chevronClass='location-chevron'
+          content={equipments.map((equipment, index) => (
+            <li key={index}>{equipment}</li>
+          ))}
+        />
       </div>
     </div>
   );
