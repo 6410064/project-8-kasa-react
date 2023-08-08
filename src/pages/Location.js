@@ -8,6 +8,7 @@ import {
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 import Collapse from "../components/home/Collapse";
+import NotFound from "./NotFound";
 
 library.add(faStar);
 
@@ -15,9 +16,12 @@ let locations = require("../data.json");
 
 const Location = () => {
   const { id } = useParams();
-
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const locationData = locations.find((loc) => loc.id === id);
 
+ if (locationData == undefined) {
+return <NotFound/>
+ }
   const {
     title,
     pictures,
@@ -29,7 +33,7 @@ const Location = () => {
     rating,
   } = locationData;
 
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
 
   const nextImage = () => {
     setCurrentImageIndex((prevIndex) =>
@@ -117,11 +121,14 @@ const Location = () => {
         </div>
       </div>
       <div className='description-and-items'>
+      <div className='description-and-items-width'>
         <Collapse
           title='Description'
           chevronClass='location-chevron'
           content={description}
         />
+        </div>
+        <div className='description-and-items-width'>
         <Collapse
           title='Equipements'
           chevronClass='location-chevron'
@@ -129,6 +136,7 @@ const Location = () => {
             <li key={index}>{equipment}</li>
           ))}
         />
+        </div>
       </div>
     </div>
   );

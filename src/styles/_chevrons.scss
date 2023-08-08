@@ -1,13 +1,14 @@
 @import './_mixins.scss';
 
 .collapse-title {
-    width: 40vw;
+    width: 100%;
+    box-sizing: border-box;
     @include scrollingMenu;
 
-    @media (max-width: 767px) {
-        width: 86vw;
+    // @media (max-width: 767px) {
+   
 
-    }
+    // }
 }
 
 .fa-chevron-down {

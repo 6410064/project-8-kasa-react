@@ -54,6 +54,7 @@
 
     @media (max-width: 767px) {
         flex-direction: column;
+        
     }
 
     .host-name-picture-and-stars {
@@ -157,9 +158,18 @@
     flex-direction: row;
     justify-content: space-between;
     margin: 0 5%;
+    width: 500px;
 
     @media (max-width: 767px) {
         flex-direction: column;
+        width: 90%;
+    }
+}
+.description-and-items-width {
+    
+    width: 100%;
+    @media (max-width: 767px) {
+        width: 100%;
     }
 }
 
