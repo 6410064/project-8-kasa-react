@@ -16,29 +16,21 @@
 .arrow-left {
     @include arrowStyle;
     left: 10%;
-
-    @media (max-width: 767px) {
-        top: 31%;
-    }
 }
 
 .arrow-right {
     @include arrowStyle;
     right: 10%;
-
-    @media (max-width: 767px) {
-        top: 31%;
-    }
 }
 
 .caroussel-counter {
     position: absolute;
-    top: 75%;
-    left: 45%;
+    top: 430px;
+    left: 49%;
     color: white;
 
     @media (max-width: 767px) {
-        top: 55%;
+        top:310px;
     }
 }
 
@@ -174,8 +166,6 @@
 }
 
 .location-description {
-    // @include scrollingMenu;
-
     @media (max-width: 767px) {
         width: 96%;
     }

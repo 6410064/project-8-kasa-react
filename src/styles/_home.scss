@@ -1,8 +1,6 @@
 @import './_mixins.scss';
 @import './variables.scss';
 
-
-
 .container-title-img {
   @include headerImg;
   background-image: url(../images-p8/Image1.png);
@@ -20,7 +18,6 @@
     right: 0;
     bottom: 0;
     background-color: rgba(0, 0, 0, 0.3);
-    /* Couleur semi-transparente */
     border-radius: 20px;
   }
 }
@@ -56,7 +53,6 @@
 
 
   .home-section-child {
-    height: 358px;
     width: 30%;
     color: aliceblue;
     background: transparent;

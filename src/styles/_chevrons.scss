@@ -4,11 +4,6 @@
     width: 100%;
     box-sizing: border-box;
     @include scrollingMenu;
-
-    // @media (max-width: 767px) {
-   
-
-    // }
 }
 
 .fa-chevron-down {
@@ -20,5 +15,4 @@
 .collapse-content {
     @include hiddenText;
     margin: -20px 0 20px 0;
-
 }

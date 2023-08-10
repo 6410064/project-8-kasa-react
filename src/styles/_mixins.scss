@@ -14,10 +14,13 @@
 
 @mixin arrowStyle {
   position: absolute;
-  top: 43%;
+  top: 280px;
   font-size: 3em;
   color: white;
   transform: translateY(-50%);
+  @media (max-width: 767px) {
+    top: 210px;
+}
 }
 
 @mixin scrollingMenu {
@@ -39,6 +42,5 @@
   padding: 0;
   border-radius: 0 0 5px 5px;
   @media (max-width: 767px) {
-    // padding: 0 10px 0 10px;
   }
 }
