@@ -1,7 +1,7 @@
 @import './_mixins.scss';
 
 
-.img-caroussel {
+.img-carousel {
     height: 350px;
     object-fit: cover;
     width: 90%;
@@ -30,7 +30,7 @@
     color: white;
 
     @media (max-width: 767px) {
-        top:310px;
+        top: 310px;
     }
 }
 
@@ -46,7 +46,7 @@
 
     @media (max-width: 767px) {
         flex-direction: column;
-        
+
     }
 
     .host-name-picture-and-stars {
@@ -157,9 +157,11 @@
         width: 90%;
     }
 }
+
 .description-and-items-width {
-    
+
     width: 45%;
+
     @media (max-width: 767px) {
         width: 100%;
     }

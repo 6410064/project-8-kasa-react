@@ -1,53 +1,8 @@
-import React, { useState } from "react";
-import { useParams } from "react-router-dom";
+import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { library } from "@fortawesome/fontawesome-svg-core";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
-import Collapse from "../components/home/Collapse";
-import NotFound from "./NotFound";
-import Carousel from "../components/home/Carousel";
-import LocationWithoutCarousel from "../components/home/LocationWithoutCarousel";
-
-library.add(faStar);
-
-let locations = require("../data.json");
-
-const Location = () => {
-  const { id } = useParams();
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const locationData = locations.find((loc) => loc.id === id);
-
- if (locationData == undefined) {
-return <NotFound/>
- }
-  const {
-    title,
-    pictures,
-    host,
-    tags,
-    description,
-    equipments,
-    location,
-    rating,
-  } = locationData;
-
-
-
-  const nextImage = () => {
-    setCurrentImageIndex((prevIndex) =>
-      prevIndex === pictures.length - 1 ? 0 : prevIndex + 1
-    );
-  };
-
-  const previousImage = () => {
-    setCurrentImageIndex((prevIndex) =>
-      prevIndex === 0 ? pictures.length - 1 : prevIndex - 1
-    );
-  };
-
-    
-  
-  // Fonction pour générer les étoiles en fonction du rating
+import Collapse from "./Collapse";
+const LocationWithoutCarousel = ({ title, location, tags, host, rating, description, equipments, pictures }) => {
   const generateRatingStars = (rating) => {
     const filledStars = [];
     const emptyStars = [];
@@ -72,31 +27,15 @@ return <NotFound/>
     );
   };
 
-  if (pictures.length === 1) {
-    return (
-      <div>
-        <LocationWithoutCarousel
-          title={title}
-          location={location}
-          tags={tags}
-          host={host}
-          rating={rating}
-          description={description}
-          equipments={equipments}
-          pictures={pictures}
-        />
-      </div>
-    );
-  }
-  else{
   return (
     <div>
-      <Carousel      
-        pictures={pictures}
-        currentImageIndex={currentImageIndex}
-        previousImage={previousImage}
-        nextImage={nextImage}
-      />
+      <div className='carousel'>
+        <img
+          className='img-carousel'
+          src={pictures[0]}
+          alt='Carousel Image'
+        />
+      </div>
       <div className='title-and-picture-host'>
         <div className='title-and-location'>
           <h1 className='title'>{title}</h1>
@@ -142,5 +81,5 @@ return <NotFound/>
     </div>
   );
 };
-};
-export default Location;
+
+export default LocationWithoutCarousel;

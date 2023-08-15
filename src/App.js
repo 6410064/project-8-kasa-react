@@ -22,7 +22,7 @@ const App = () => {
       element: <About />,
     },
     {
-      path: "/notfound",
+      path: "*",
       element: <NotFound />,
     },
     {
