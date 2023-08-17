@@ -1,31 +1,8 @@
 import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faStar } from "@fortawesome/free-solid-svg-icons";
 import Collapse from "./Collapse";
+import GenerateRatingStars from "./GenerateRatingStars";
+
 const LocationWithoutCarousel = ({ title, location, tags, host, rating, description, equipments, pictures }) => {
-  const generateRatingStars = (rating) => {
-    const filledStars = [];
-    const emptyStars = [];
-
-    for (let i = 0; i < rating; i++) {
-      filledStars.push(
-        <FontAwesomeIcon key={i} icon={faStar} className='star-filled' />
-      );
-    }
-
-    for (let i = rating; i < 5; i++) {
-      emptyStars.push(
-        <FontAwesomeIcon key={i} icon={faStar} className='star-empty' />
-      );
-    }
-
-    return (
-      <div className='rating'>
-        {filledStars}
-        {emptyStars}
-      </div>
-    );
-  };
 
   return (
     <div>
@@ -56,7 +33,7 @@ const LocationWithoutCarousel = ({ title, location, tags, host, rating, descript
             />
           </div>
           <div className='rating-container'>
-            {generateRatingStars(parseInt(rating))}
+            {GenerateRatingStars(parseInt(rating))}
           </div>
         </div>
       </div>

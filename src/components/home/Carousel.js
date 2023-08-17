@@ -2,14 +2,27 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronLeft, faChevronRight } from "@fortawesome/free-solid-svg-icons";
 
-const Carousel = ({ pictures, currentImageIndex, previousImage, nextImage }) => {
+const Carousel = ({ pictures, currentImageIndex, setCurrentImageIndex }) => {
+
+  const nextImage = () => {
+    setCurrentImageIndex((prevIndex) =>
+      prevIndex === pictures.length - 1 ? 0 : prevIndex + 1
+    );
+  };
+
+  const previousImage = () => {
+    setCurrentImageIndex((prevIndex) =>
+      prevIndex === 0 ? pictures.length - 1 : prevIndex - 1
+    );
+  };
+
   return (
     <div>
       <div className='carousel'>
         <img
           className='img-carousel'
           src={pictures[currentImageIndex]}
-          alt='Caroussel Image'
+          alt='Carousel Image'
         />
       </div>
       <div className='carousel-navigation'>
