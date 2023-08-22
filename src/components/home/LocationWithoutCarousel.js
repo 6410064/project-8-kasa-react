@@ -1,18 +1,23 @@
 import React from "react";
-import Collapse from "./Collapse";
-import GenerateRatingStars from "./GenerateRatingStars";
+import Collapse from "./Collapse"; // Assurez-vous que le chemin d'importation est correct
+import GenerateRatingStars from "./GenerateRatingStars"; // Assurez-vous que le chemin d'importation est correct
 
 const LocationWithoutCarousel = ({ title, location, tags, host, rating, description, equipments, pictures }) => {
-
   return (
     <div>
-      <div className='carousel'>
+      {pictures.length > 1 ? (
+        <div className='carousel'>
+          {/* Afficher les images du Carousel ici */}
+        </div>
+      ) : (
         <img
           className='img-carousel'
           src={pictures[0]}
           alt='Carousel Image'
         />
-      </div>
+      )}
+
+      {/* Afficher le reste des éléments ici */}
       <div className='title-and-picture-host'>
         <div className='title-and-location'>
           <h1 className='title'>{title}</h1>

@@ -3,7 +3,9 @@ import ChevronRotation from "./ChevronRotation";
 
 const Collapse = ({ content, chevronClass, title }) => {
   const [isCollapsed, setIsCollapsed] = useState(true);
+  /*la hauteur de collapse démarre a 0*/
   const [contentHeight, setContentHeight] = useState(0);
+  /*pour que la tzille du collapse d'adapte a la longueur du texte */
   const contentRef = useRef(null);
 
   useEffect(() => {
